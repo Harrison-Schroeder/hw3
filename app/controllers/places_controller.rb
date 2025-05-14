@@ -14,6 +14,10 @@ class PlacesController < ApplicationController
     # render Places/Show view with details about Place
   end
 
+  def new
+    # render view with new Place form
+  end
+
   def create
     # start with a new Place
     @place = Place.new
@@ -23,6 +27,17 @@ class PlacesController < ApplicationController
    
     # save Place row
     @place.save
+
+    # redirect user
+    redirect_to "/places"
+  end
+
+  def destroy
+    # find a Place
+    @place = Place.find_by({ "id" => params["id"] })
+
+    # destroy Place row
+    @place.destroy
 
     # redirect user
     redirect_to "/places"

@@ -6,20 +6,24 @@
     <input type="text" name="title">
   </p>
 
+    <p>
+    <label for="occurred_on">Date</label>
+    <input type="date" name="occurred_on">
+  </p>
+
   <p>
     <label for="description">Description</label>
     <input type="text" name="description">
   </p>
 
-    <p>
-    <label for="occurred_on">Date</label>
-    <input type="text" name="occurred_on">
+  <p>
+  <input type="hidden" name="place_id" value="<%= @place["id"] %>">
   </p>
 
-  <!-- transfer state from the previous action to the next -->
-  <p>
-    <label for="place_id">Place</label>
-    <input type="text" name="place_id" value="<%= @place["id"] %>">
-  </p>
   <button>Submit</button>
+  
 </form>
+
+<br> 
+
+<p><a href="/places/<%= @place["id"] %>">Back to <%= @place["name"] %></a></p>
